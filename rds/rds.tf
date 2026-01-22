@@ -16,4 +16,9 @@ resource "aws_db_instance" "mydbterraform" {
   skip_final_snapshot = var.skip_final_snapshot
   apply_immediately   = var.apply_immediately
 
+  tags = {
+    managed = "Managed by terraform"
+    terraform-module = "yes"
+  }
+
 }
