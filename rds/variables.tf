@@ -49,6 +49,16 @@ variable "username" {
   default     = "dba"
 }
 
+variable "backup_retention_period" {
+  description = "Periodo de retenção do backup"
+  type        = number
+  default     = 0
+}
+variable "backup_window" {
+  description = "Janela de execução do backup"
+  type        = string
+}
+
 variable "skip_final_snapshot" {
   description = "Escolher de havera um snapshot final de backup ou destruiremos todo o recurso e snapshot"
   type        = bool

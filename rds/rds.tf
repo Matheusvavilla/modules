@@ -13,11 +13,13 @@ resource "aws_db_instance" "mydbterraform" {
   username                    = var.username
   manage_master_user_password = true
 
-  skip_final_snapshot = var.skip_final_snapshot
-  apply_immediately   = var.apply_immediately
+  backup_retention_period = var.backup_retention_period
+  backup_window           = var.backup_window
+  skip_final_snapshot     = var.skip_final_snapshot
+  apply_immediately       = var.apply_immediately
 
   tags = {
-    managed = "Managed by terraform"
+    managed          = "Managed by terraform"
     terraform-module = "yes"
   }
 
