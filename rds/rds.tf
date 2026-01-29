@@ -13,6 +13,8 @@ resource "aws_db_instance" "mydbterraform" {
   username                    = var.username
   manage_master_user_password = true
 
+  parameter_group_family = var.parameter_group_family
+
   backup_retention_period = var.backup_retention_period
   backup_window           = var.backup_window
   skip_final_snapshot     = var.skip_final_snapshot
