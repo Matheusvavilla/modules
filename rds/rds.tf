@@ -6,6 +6,8 @@ resource "aws_db_instance" "mydbterraform" {
 
   instance_class = var.instance_class
 
+  parameter_group_name = aws_db_parameter_group.parameter_group[0].name
+
   storage_type      = var.storage_type
   allocated_storage = var.allocated_storage
 
