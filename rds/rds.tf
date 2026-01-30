@@ -3,7 +3,6 @@ resource "aws_db_instance" "mydbterraform" {
   db_name        = var.db_name
   engine         = var.engine
   engine_version = var.engine_version
-  parameter_group_name = module.rds_parameter_group.name
 
   instance_class = var.instance_class
 
