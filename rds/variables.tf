@@ -72,9 +72,8 @@ variable "apply_immediately" {
 
 
 ###### Variables Parameter Group.
-/*
+
 variable "parameter_group_family" {
   description = "Familia do parameter group MySQL(mysql8.4), PostgreSQL(postgres16) "
   type        = string
 }
-*/
