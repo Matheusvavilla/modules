@@ -4,6 +4,7 @@ resource "aws_db_instance" "mydbterraform" {
   engine         = var.engine
   engine_version = var.engine_version
   parameter_group_family = var.parameter_group_family
+  db_parameters = var.db_parameters
 
   instance_class = var.instance_class
 
