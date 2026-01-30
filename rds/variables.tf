@@ -72,27 +72,9 @@ variable "apply_immediately" {
 
 
 ###### Variables Parameter Group.
-
+/*
 variable "parameter_group_family" {
   description = "Familia do parameter group MySQL(mysql8.4), PostgreSQL(postgres16) "
   type        = string
 }
-
-variable "db_parameters" {
-  description = "Lista de parâmetros do DB Parameter Group"
-  type = list(object({
-    name         = string
-    value        = string
-    apply_method = optional(string, "pending-reboot")
-  }))
-
-  default = []
-
-  validation {
-    condition = alltrue([
-      for p in var.db_parameters :
-      contains(["immediate", "pending-reboot"], p.apply_method)
-    ])
-    error_message = "apply_method deve ser 'immediate' ou 'pending-reboot'."
-  }
-}
+*/

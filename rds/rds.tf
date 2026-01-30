@@ -3,7 +3,7 @@ resource "aws_db_instance" "mydbterraform" {
   db_name        = var.db_name
   engine         = var.engine
   engine_version = var.engine_version
-
+ # parameter_group_family = var.parameter_group_family
 
   instance_class = var.instance_class
 
@@ -13,7 +13,7 @@ resource "aws_db_instance" "mydbterraform" {
   username                    = var.username
   manage_master_user_password = true
 
-  parameter_group_family = var.parameter_group_family
+  
 
   backup_retention_period = var.backup_retention_period
   backup_window           = var.backup_window
