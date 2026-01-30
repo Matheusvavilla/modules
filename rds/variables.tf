@@ -78,7 +78,7 @@ variable "parameter_group_family" {
   type        = string
 }
 
-ariable "db_parameters" {
+variable "db_parameters" {
   description = "Lista de parâmetros do DB Parameter Group"
   type = list(object({
     name         = string
