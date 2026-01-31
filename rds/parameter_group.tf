@@ -11,4 +11,7 @@ resource "aws_db_parameter_group" "parameter_group" {
       apply_method = parameter.value.apply_method
     }
   }
+  lifecycle {
+   create_before_destroy = true
+  }
 }
