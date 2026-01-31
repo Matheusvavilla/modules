@@ -3,7 +3,7 @@ resource "aws_db_instance" "mydbterraform" {
   db_name        = var.db_name
   engine         = var.engine
   engine_version = var.engine_version
-  allow_major_version_upgrade = var.allow_major_version_upgrade
+  allow_major_version_upgrade = var.allow_major_version_upgrade #Onde realizamos associação do parameter group com o RDS.
 
   instance_class = var.instance_class
 
