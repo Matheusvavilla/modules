@@ -8,7 +8,7 @@ resource "aws_db_option_group" "options_group" {
     for_each = var.optionsgroup
     content {
       name         = optionsgroup.value.name
-      value        = paroptionsgroup.value.value
+      value        = optionsgroup.value.value
     }
   }
 }
