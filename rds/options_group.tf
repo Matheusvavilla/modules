@@ -5,7 +5,7 @@ resource "aws_db_option_group" "options_group" {
   major_engine_version     = var.major_engine_version
 
   dynamic "optionsgroup" {
-    for_each = var.optionsgroup
+    for_each = var.db_optionsgroup
     content {
       name         = optionsgroup.value.name
       value        = optionsgroup.value.value
