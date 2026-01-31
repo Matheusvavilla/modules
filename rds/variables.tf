@@ -27,6 +27,11 @@ variable "engine_version" {
   description = "Versão da engine do banco de dados, exemplo PostgreSQL 16.9"
   type        = string
 }
+variable "allow_major_version_upgrade" {
+  description = "Upgrade major version"
+  type = bool
+  default = true
+}
 
 variable "instance_class" {
   description = "Instance class do banco de dados, exemplo db.m6g.large"

@@ -3,6 +3,7 @@ resource "aws_db_instance" "mydbterraform" {
   db_name        = var.db_name
   engine         = var.engine
   engine_version = var.engine_version
+  allow_major_version_upgrade = var.allow_major_version_upgrade
 
   instance_class = var.instance_class
 
