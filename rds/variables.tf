@@ -101,3 +101,18 @@ variable "db_parameters" {
     error_message = "apply_method deve ser 'immediate' ou 'pending-reboot'."
   }
 }
+
+
+###### Variables Options Group.
+
+variable "major_engine_version" {
+  description = "Versão major do seu database para criação do Options Group dinâmico"
+  type = string
+}
+variable "optionsgroup" {
+  description = "Lista de Parametros do Options Group dinâmico"
+  type = list(object({
+    name = string
+    value = string
+  }))
+}
