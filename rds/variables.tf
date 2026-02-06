@@ -19,8 +19,8 @@ variable "engine" {
   description = "Engine do banco de dados MySQL, PostgreSQL, Oracle, SQLServer..."
   type        = string
   validation {
-    condition     = contains(["mysql", "postgresql"], var.engine)
-    error_message = "O valor da variável engine deve ser 'mysql' ou 'postgresql'."
+    condition     = contains(["mysql", "postgres"], var.engine)
+    error_message = "O valor da variável engine deve ser 'mysql' ou 'postgres'."
   }
 }
 variable "engine_version" {
@@ -47,6 +47,16 @@ variable "username" {
   description = "Nome do usuário master"
   type        = string
   default     = "dba"
+}
+
+variable "backup_retention_period" {
+  description = "Periodo de retenção do backup"
+  type        = number
+  default     = 0
+}
+variable "backup_window" {
+  description = "Janela de execução do backup"
+  type        = string
 }
 
 variable "skip_final_snapshot" {
