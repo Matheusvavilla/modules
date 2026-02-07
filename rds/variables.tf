@@ -16,7 +16,7 @@ variable "db_name" {
   type        = string
 }
 variable "engine" {
-  description = "Engine do banco de dados MySQL, PostgreSQL, Oracle, SQLServer..."
+  description = "Engine do banco de dados MySQL, PostgreSQL, MariaDB"
   type        = string
   validation {
     condition     = contains(["mysql", "postgres", "mariadb"], var.engine)
