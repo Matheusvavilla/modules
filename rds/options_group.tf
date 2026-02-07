@@ -15,6 +15,10 @@ resource "aws_db_option_group" "options_group" {
       name = "SERVER_AUDIT_FILE_ROTATIONS"
       value = "50"
     }
+    option_settings {
+      name = "SERVER_AUDIT_FILE_ROTATE_SIZE"
+      value = "2000000"
+    }
   }
   lifecycle {
     create_before_destroy = true
