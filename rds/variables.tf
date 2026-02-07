@@ -111,7 +111,7 @@ variable "major_engine_version" {
   description = "Versão major do seu database para criação do Options Group dinâmico"
   type = string
 }
-
+/*
 variable "db_options_group" {
   description = "Lista de parâmetros do Option Group"
   type = list(object({
@@ -130,3 +130,4 @@ variable "db_options_group" {
     error_message = "apply_method deve ser 'immediate' ou 'pending-reboot'."
   }
 }
+*/
