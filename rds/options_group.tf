@@ -6,19 +6,18 @@ resource "aws_db_option_group" "options_group" {
   option {
     option_name = var.option_name
 
-    dynamic "options" {
+    dynamic "option_settings" {
       for_each = var.db_options
       content {
-        name         = options.value.name
-        value        = options.value.value
-        apply_method = options.value.apply_method
-      }
-      lifecycle {
-        create_before_destroy = true
-        ignore_changes = [
-          tags
-        ]
+        name  = option_settings.value.name
+        value = option_settings.value.value
       }
     }
+  }
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes = [
+      tags
+    ]
   }
 }
