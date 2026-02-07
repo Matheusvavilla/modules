@@ -19,8 +19,8 @@ variable "engine" {
   description = "Engine do banco de dados MySQL, PostgreSQL, Oracle, SQLServer..."
   type        = string
   validation {
-    condition     = contains(["mysql", "postgres"], var.engine)
-    error_message = "O valor da variável engine deve ser 'mysql' ou 'postgres'."
+    condition     = contains(["mysql", "postgres", "mariadb"], var.engine)
+    error_message = "O valor da variável engine deve ser 'mysql', 'postgres' ou 'mariadb'."
   }
 }
 variable "engine_version" {
@@ -109,12 +109,3 @@ variable "major_engine_version" {
   description = "Versão major do seu database para criação do Options Group dinâmico"
   type = string
 }
-/*
-variable "db_optionsgroup" {
-  description = "Lista de Parametros do Options Group dinâmico"
-  type = list(object({
-    name = string
-    value = string
-  }))
-}
-*/
