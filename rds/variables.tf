@@ -20,7 +20,7 @@ variable "engine" {
   description = "Engine do banco de dados MySQL, PostgreSQL, MariaDB"
   type        = string
   validation {
-    condition     = contains(["mysql", "postgres", "mariadb"], var.engine)
+    condition     = contains(["mariadb", "mysql", "postgres"], var.engine)
     error_message = "O valor da variável engine deve ser 'mysql', 'mariadb' ou 'postgres'."
   }
 }
