@@ -3,13 +3,20 @@ resource "aws_db_option_group" "options_group" {
   option_group_description = "Terraform Option Group"
   engine_name              = var.engine
   major_engine_version     = var.major_engine_version
-/*
-  dynamic "optionsgroup" {
-    for_each = var.db_optionsgroup
-    content {
-      name         = optionsgroup.value.name
-      value        = optionsgroup.value.value
+
+  option {
+    option_name = "SERVER_AUDIT_EVENTS*"
+
+    option_settings {
+      value = "CONNECT, QUERY, QUERY_DDL, QUERY_DML, QUERY_DCL, QUERY_DML_NO_SELECT"
     }
   }
-  */
-}
+
+  option {
+    option_name = "SERVER_AUDIT_FILE_ROTATIONS"
+
+    option_settings {
+      value = 50
+    }
+  }
+} 
