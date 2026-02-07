@@ -9,7 +9,7 @@ resource "aws_db_option_group" "options_group" {
 
     option_settings {
       name = "SERVER_AUDIT_EVENTS"
-      value = ["CONNECT, QUERY, QUERY_DDL, QUERY_DML, QUERY_DCL, QUERY_DML_NO_SELECT"]
+      value = "CONNECT, QUERY, QUERY_DDL, QUERY_DML, QUERY_DCL, QUERY_DML_NO_SELECT"
     }
     option_settings {
       name = "SERVER_AUDIT_FILE_ROTATIONS"
