@@ -18,7 +18,7 @@ resource "aws_db_option_group" "options_group" {
 
     option_settings {
       name = "SERVER_AUDIT_FILE_ROTATIONS"
-      value = 50
+      value = "50"
     }
   }
 } 
