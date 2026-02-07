@@ -117,9 +117,9 @@ variable "option_name" {
   default     = ""
 }
 variable "db_options" {
-  description = "Lista de parâmetros do Option Group"
   type = list(object({
-    name         = string
-    value        = string
+    name  = string
+    value = string
   }))
+  default = []
 }
