@@ -15,6 +15,7 @@ variable "db_name" {
   description = "Nome da database"
   type        = string
 }
+/*
 variable "engine" {
   description = "Engine do banco de dados MySQL, PostgreSQL, MariaDB"
   type        = string
@@ -23,6 +24,7 @@ variable "engine" {
     error_message = "O valor da variável engine deve ser 'mysql', 'mariadb' ou 'postgres'."
   }
 }
+*/
 variable "engine_version" {
   description = "Versão da engine do banco de dados, exemplo PostgreSQL 16.9"
   type        = string
