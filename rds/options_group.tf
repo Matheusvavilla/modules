@@ -16,4 +16,7 @@ resource "aws_db_option_group" "options_group" {
       value = "50"
     }
   }
+  lifecycle {
+    create_before_destroy = true
+  }
 }
