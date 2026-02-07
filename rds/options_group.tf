@@ -5,17 +5,12 @@ resource "aws_db_option_group" "options_group" {
   major_engine_version     = var.major_engine_version
 
   option {
-    option_name = "SERVER_AUDIT_EVENTS*"
+    option_name = "MARIADB_AUDIT_PLUGIN"
 
     option_settings {
       name = "SERVER_AUDIT_EVENTS*"
       value = "CONNECT, QUERY, QUERY_DDL, QUERY_DML, QUERY_DCL, QUERY_DML_NO_SELECT"
     }
-  }
-
-  option {
-    option_name = "SERVER_AUDIT_FILE_ROTATIONS"
-
     option_settings {
       name = "SERVER_AUDIT_FILE_ROTATIONS"
       value = "50"
