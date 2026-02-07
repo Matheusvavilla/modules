@@ -31,8 +31,8 @@ variable "engine_version" {
 }
 variable "allow_major_version_upgrade" {
   description = "Upgrade major version"
-  type = bool
-  default = true
+  type        = bool
+  default     = true
 }
 
 variable "instance_class" {
@@ -109,10 +109,14 @@ variable "db_parameters" {
 
 variable "major_engine_version" {
   description = "Versão major do seu database para criação do Options Group dinâmico"
-  type = string
+  type        = string
 }
-/*
-variable "db_options_group" {
+variable "option_name" {
+  description = "option name do option group, exemplos: MARIADB_AUDIT_PLUGIN"
+  type        = string
+  default     = ""
+}
+variable "db_options" {
   description = "Lista de parâmetros do Option Group"
   type = list(object({
     name         = string
@@ -124,10 +128,9 @@ variable "db_options_group" {
 
   validation {
     condition = alltrue([
-      for p in var.db_parameters :
+      for p in var.db_options :
       contains(["immediate", "pending-reboot"], p.apply_method)
     ])
     error_message = "apply_method deve ser 'immediate' ou 'pending-reboot'."
   }
 }
-*/

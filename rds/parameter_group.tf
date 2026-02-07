@@ -1,6 +1,6 @@
 resource "aws_db_parameter_group" "parameter_group" {
-  name   = "${var.identifier}-${var.engine}${replace(var.engine_version, ".", "")}-parameter-group"
-  family = var.parameter_group_family
+  name        = "${var.identifier}-${var.engine}${replace(var.engine_version, ".", "")}-parameter-group"
+  family      = var.parameter_group_family
   description = "Parameter group criado via terraform"
 
   dynamic "parameter" {
@@ -12,6 +12,6 @@ resource "aws_db_parameter_group" "parameter_group" {
     }
   }
   lifecycle {
-   create_before_destroy = true
+    create_before_destroy = true
   }
 }

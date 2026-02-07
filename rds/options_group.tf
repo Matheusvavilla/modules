@@ -3,27 +3,22 @@ resource "aws_db_option_group" "options_group" {
   option_group_description = "Terraform Option Group"
   engine_name              = var.engine
   major_engine_version     = var.major_engine_version
-
   option {
-    option_name = "MARIADB_AUDIT_PLUGIN"
+    option_name = "var.option_name"
 
-#    option_settings {
-#      name = "SERVER_AUDIT_EVENTS*"
-#      value = "CONNECT, QUERY, QUERY_DDL, QUERY_DML, QUERY_DCL, QUERY_DML_NO_SELECT"
-#    }
-    option_settings {
-      name = "SERVER_AUDIT_FILE_ROTATIONS"
-      value = "50"
+    dynamic "options" {
+      for_each = var.db_options
+      content {
+        name         = options.value.name
+        value        = options.value.value
+        apply_method = options.value.apply_method
+      }
+      lifecycle {
+        create_before_destroy = true
+        ignore_changes = [
+          tags
+        ]
+      }
     }
-    option_settings {
-      name = "SERVER_AUDIT_FILE_ROTATE_SIZE"
-      value = "2000000"
-    }
-  }
-  lifecycle {
-    prevent_destroy = true
-    ignore_changes = [ 
-      tags
-     ]
   }
 }
