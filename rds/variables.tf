@@ -121,16 +121,5 @@ variable "db_options" {
   type = list(object({
     name         = string
     value        = string
-    apply_method = optional(string, "pending-reboot")
   }))
-
-  default = []
-
-  validation {
-    condition = alltrue([
-      for p in var.db_options :
-      contains(["immediate", "pending-reboot"], p.apply_method)
-    ])
-    error_message = "apply_method deve ser 'immediate' ou 'pending-reboot'."
-  }
 }
