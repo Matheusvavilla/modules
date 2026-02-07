@@ -22,5 +22,8 @@ resource "aws_db_option_group" "options_group" {
   }
   lifecycle {
     prevent_destroy = true
+    ignore_changes = [ 
+      tags
+     ]
   }
 }

@@ -111,3 +111,22 @@ variable "major_engine_version" {
   description = "Versão major do seu database para criação do Options Group dinâmico"
   type = string
 }
+
+variable "db_options_group" {
+  description = "Lista de parâmetros do Option Group"
+  type = list(object({
+    name         = string
+    value        = string
+    apply_method = optional(string, "pending-reboot")
+  }))
+
+  default = []
+
+  validation {
+    condition = alltrue([
+      for p in var.db_parameters :
+      contains(["immediate", "pending-reboot"], p.apply_method)
+    ])
+    error_message = "apply_method deve ser 'immediate' ou 'pending-reboot'."
+  }
+}
