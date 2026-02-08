@@ -114,7 +114,6 @@ variable "major_engine_version" {
 variable "option_name" {
   description = "option name do option group, exemplos: MARIADB_AUDIT_PLUGIN"
   type        = string
-  default     = ""
 }
 variable "db_options" {
   type = list(object({
