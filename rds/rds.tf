@@ -4,6 +4,9 @@ resource "aws_db_instance" "mydbterraform" {
   engine                      = var.engine
   engine_version              = var.engine_version
   allow_major_version_upgrade = var.allow_major_version_upgrade
+  blue_green_update {
+    enabled = true
+  }
 
   instance_class = var.instance_class
 
@@ -14,7 +17,7 @@ resource "aws_db_instance" "mydbterraform" {
   storage_type      = var.storage_type
   allocated_storage = var.allocated_storage
 
-  username                    = var.username
+  username = var.username
   password = var.password
   #manage_master_user_password = true
 
