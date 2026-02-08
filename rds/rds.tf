@@ -10,8 +10,6 @@ resource "aws_db_instance" "mydbterraform" {
   parameter_group_name = aws_db_parameter_group.parameter_group.name #Onde realizamos associação do parameter group com o RDS.
 
   option_group_name = aws_db_option_group.options_group.name # Associando o Options Group.
-  option_name = var.option_name
-  major_engine_version = var.major_engine_version
 
   storage_type      = var.storage_type
   allocated_storage = var.allocated_storage
