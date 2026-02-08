@@ -15,7 +15,8 @@ resource "aws_db_instance" "mydbterraform" {
   allocated_storage = var.allocated_storage
 
   username                    = var.username
-  manage_master_user_password = true
+  password = var.password
+  #manage_master_user_password = true
 
 
 

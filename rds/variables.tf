@@ -55,6 +55,10 @@ variable "username" {
   type        = string
   default     = "dba"
 }
+variable "password" {
+  description = "Senha do usuário com permissões master."
+  type        = string
+}
 
 variable "backup_retention_period" {
   description = "Periodo de retenção do backup"
