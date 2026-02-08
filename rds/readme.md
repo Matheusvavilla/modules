@@ -46,7 +46,7 @@ db_options = [
 ---
 
 ## 🧩 Ponto de Atenção.
-Lembrando caso você faço o git clone do repositório é necessário apenas que você altere o arquivo terraform.tfvars para que o seu deploy seja realizado. Segue link do repositório para uso:
+Lembrando caso você faço o git clone do repositório é necessário apenas que você altere o arquivo terraform.tfvars para que o seu deploy seja realizado. Segue link do repositório que faz a chamado para uso do modulo:
 https://github.com/Matheusvavilla/rds-module-remote/tree/master
 
 ## 🧩 Exemplo de Uso
