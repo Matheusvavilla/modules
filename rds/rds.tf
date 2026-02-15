@@ -4,11 +4,11 @@ resource "aws_db_instance" "mydbterraform" {
   engine                      = var.engine
   engine_version              = var.engine_version
   allow_major_version_upgrade = var.allow_major_version_upgrade
-
+/*
   blue_green_update {
     enabled = true
   }
-
+*/
   instance_class = var.instance_class
 
   parameter_group_name = aws_db_parameter_group.parameter_group.name #Onde realizamos associação do parameter group com o RDS.
@@ -35,7 +35,7 @@ resource "aws_db_instance" "mydbterraform" {
   }
 
 }
-
+/*
 resource "aws_rds_blue_green_deployment" "example" {
   source = aws_db_instance.example.arn
   engine                      = var.engine
@@ -43,3 +43,4 @@ resource "aws_rds_blue_green_deployment" "example" {
   # Optionally, specify target engine version, parameter groups, etc. here if different
   # target_engine_version = "8.0.34"
 }
+*/
