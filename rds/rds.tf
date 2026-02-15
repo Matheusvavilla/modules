@@ -4,9 +4,11 @@ resource "aws_db_instance" "mydbterraform" {
   engine                      = var.engine
   engine_version              = var.engine_version
   allow_major_version_upgrade = var.allow_major_version_upgrade
+/*
   blue_green_update {
     enabled = true
   }
+*/
 
   instance_class = var.instance_class
 
