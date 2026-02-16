@@ -29,18 +29,13 @@ resource "aws_db_instance" "mydbterraform" {
   skip_final_snapshot     = var.skip_final_snapshot
   apply_immediately       = var.apply_immediately
 
+  blue_green_update {
+    enabled = var.blue_green_update
+  }
+
   tags = {
     managed          = "Managed by terraform"
     terraform-module = "yes"
   }
 
 }
-/*
-resource "aws_rds_blue_green_deployment" "example" {
-  source = aws_db_instance.example.arn
-  engine                      = var.engine
-  engine_version              = var.engine_version
-  # Optionally, specify target engine version, parameter groups, etc. here if different
-  # target_engine_version = "8.0.34"
-}
-*/

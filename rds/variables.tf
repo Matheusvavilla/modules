@@ -35,6 +35,12 @@ variable "allow_major_version_upgrade" {
   default     = true
 }
 
+variable "blue_green_update" {
+  description = "Habilitando deploymente blue green"
+  type = bool
+  default = false
+}
+
 variable "instance_class" {
   description = "Instance class do banco de dados, exemplo db.m6g.large"
   type        = string
