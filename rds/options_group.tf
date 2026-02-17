@@ -1,3 +1,5 @@
+/*
+Necessário desabilitar o option group customizado para realizar a criação do blue/green que aceita apenas o default
 resource "aws_db_option_group" "options_group" {
   name                     = "${var.identifier}${var.engine}${replace(var.engine_version, ".", "")}"
   option_group_description = "Terraform Option Group"
@@ -21,3 +23,4 @@ resource "aws_db_option_group" "options_group" {
     ]
   }
 }
+*/

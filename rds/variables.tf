@@ -116,7 +116,8 @@ variable "db_parameters" {
 
 
 ###### Variables Options Group.
-
+/*
+Necessário desabilitar o option group customizado para realizar a criação do blue/green que aceita apenas o default
 variable "major_engine_version" {
   description = "Versão major do seu database para criação do Options Group dinâmico"
   type        = string
@@ -132,3 +133,4 @@ variable "db_options" {
   }))
   default = []
 }
+*/
